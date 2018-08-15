@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.Grae-logo {
+  height: 80px;
+}
+
+.App-header {
+  background-color: #169;
+  height: 175px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+  line-height: .5;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.button{
+  background-color: #169;
+  border: none;
+  color: white;
+  height: 20px;
+  padding: 1px;
+  margin-bottom: 10px;
+  text-decoration: underline overline wavy white;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
