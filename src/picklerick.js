@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './dick.css';
+import './picklerick.css';
 import picklepic from './Pickle_rick_transparent.webp'
-import aud from './PICKLE RICK.mp3'
+import aud from './IM PICKLE RICK.mp3'
 
-class Dick extends Component{
+class PickleRick extends Component{
 	butscript = () => {
 		if (this.pickle.paused) {
 			this.pickle.play()}
@@ -19,6 +19,6 @@ class Dick extends Component{
 			</div>
 		);
 	}
-
 }
-export default Dick;
+
+export default PickleRick;

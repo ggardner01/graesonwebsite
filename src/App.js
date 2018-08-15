@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Dick from './dick'
+import PickleRick from './picklerick'
 import logo from './logo.svg';
 import './App.css';
 import grae from './pic.jpg';
@@ -27,16 +27,16 @@ class App extends Component {
         <p className="App-intro">
           This is one badass motherfucker.
         </p>
-        
-        <Dick/>
+
+        <PickleRick/>
 
 		<h4 className="App-intro">
         	Shout out to my homeboys (Luke)
         </h4>
 
-        <video ref={(el) => this.africa = el} src={video} /> 
+        <video ref={(el) => this.africa = el} src={video} />
         <br/>
-        <button type="button" className="button" onClick={this.butscript}>Click Me Bitch</button> 
+        <button type="button" className="button" onClick={this.butscript}>Click Me Bitch</button>
         <br/>
 
       </div>
