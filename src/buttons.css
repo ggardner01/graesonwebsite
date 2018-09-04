@@ -1,0 +1,22 @@
+.main {
+  text-align: center;
+}
+
+.head {
+  background-color: white;
+  height: 45px;
+  padding: 5px;
+  color: white;
+  display: flex;
+}
+
+.but{
+  margin: 10px;
+  height:28px;
+  width:80px;
+  background: #169;
+  cursor: pointer;
+}
+.spac{
+  width: 30px;
+}

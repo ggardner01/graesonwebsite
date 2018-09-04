@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "apm": "^1.0.2",
+    "liowebrtc": "^0.1.14",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"

@@ -4,43 +4,63 @@ import logo from './logo.svg';
 import './App.css';
 import grae from './pic.jpg';
 import video from  './africa.mp4'
+import Buttons from './buttons'
+import Home from './home'
+import Blog from './blog'
+import LioWebRTC from 'liowebrtc';
 
 class App extends Component {
 
-	butscript = () => {
-		if (this.africa.paused) {
-			this.africa.play()}
-		else {
-			this.africa.pause()}
+
+	constructor(props){
+		super(props);
+		this.page = this.page.bind(this)
+		this.state = {
+			page: "home",
+			pickleplay: false,
+		};
+	}
+
+	componentDidMount() {
+		this.webrtc = new LioWebRTC({
+    dataOnly: true,
+		debug: true,
+});
+this.webrtc.on('readyToCall', () => {
+    // Joins a room if it exists, creates it if it doesn't
+    this.webrtc.joinRoom('main');
+
+});
+this.webrtc.on('receivedPeerData', (type, data, peer) => {
+    if (type === 'play') {
+        this.setState({pickleplay: data});
+    }
+});
+	}
+
+pickleshout = (inp) => {
+	this.webrtc.shout("play", inp);
+}
+
+	page(inp){
+		this.setState({page: inp})
 	}
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={grae} className="Grae-logo" alt="logo" />
-          <h1 className="App-title">What up motherfuckers.</h1>
-          <h2 className="App-title"> I'm Graeson and </h2>
-          <h2 className="App-title"> welcome to my website </h2>
-        </header>
+			<div>
+				<Buttons page={this.page} />
+				{
+					this.state.page === "home" &&
+					<Home onrickplay={this.pickleshout} pickleplay={this.state.pickleplay} />
+				}
+				{
+					this.state.page === "blog" &&
+					<Blog/>
+				}
+			</div>
 
-        <p className="App-intro">
-          This is one badass motherfucker.
-        </p>
-
-        <PickleRick/>
-
-		<h4 className="App-intro">
-        	Shout out to my homeboys (Luke)
-        </h4>
-
-        <video ref={(el) => this.africa = el} src={video} />
-        <br/>
-        <button type="button" className="button" onClick={this.butscript}>Click Me Bitch</button>
-        <br/>
-
-      </div>
-    );
+		);
   }
 }
 
